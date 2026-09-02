@@ -1,18 +1,20 @@
 import { useState } from 'react'
-import { Typography, Box } from '@mui/material'
 import RegisterForm from './components/RegisterForm'
 import MusicTable from './components/MusicTable'
 import SpotifyProfile from './components/SpotifyProfile'
 
 function App() {
+  const [musicdata, setMusicData] = useState([])
+  const [selectedMusicData, setSelectedMusicData] = useState(null)
   
+
 
   return (
    <>
-    <RegisterForm />
-    <MusicTable />
-    <SpotifyProfile />
-   </>
+      <RegisterForm onSubmit={setMusicData} />
+      <MusicTable/>
+      <SpotifyProfile/>
+   </> 
   )
 }
 
