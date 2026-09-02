@@ -40,10 +40,8 @@ export default function RegisterForm({ onSubmit }) {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-
         if (validateForm()) {
             onSubmit(music)
-
             setMusic({
                 title: '',
                 genre: '',
@@ -111,19 +109,18 @@ export default function RegisterForm({ onSubmit }) {
                     User Role
                 </Typography>
                 <RadioGroup
-                    row
                     value={music.role}
                     onChange={(e) =>
                         setMusic({ ...music, role: e.target.value })
                     }
                 >
                     <FormControlLabel
-                        value="creator"
+                        value="Creator"
                         control={<Radio />}
                         label="Creator"
                     />
                     <FormControlLabel
-                        value="listener"
+                        value="Listener"
                         control={<Radio />}
                         label="Listener"
                     />

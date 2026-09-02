@@ -7,13 +7,16 @@ function App() {
   const [musicdata, setMusicData] = useState([])
   const [selectedMusicData, setSelectedMusicData] = useState(null)
   
+  const handleMusicSubmit = (data) => {
+    setMusicData((prev) => [...prev, data]);
+  };
 
 
   return (
    <>
-      <RegisterForm onSubmit={setMusicData} />
-      <MusicTable/>
-      <SpotifyProfile/>
+      <RegisterForm onSubmit={handleMusicSubmit} />
+      <MusicTable data={musicdata} onRowClick={setSelectedMusicData} />
+      <SpotifyProfile />
    </> 
   )
 }
